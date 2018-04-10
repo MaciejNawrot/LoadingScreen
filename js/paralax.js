@@ -5,62 +5,62 @@
 
 
 
-var start=(window.innerWidth/100)*20;
+let start=(window.innerWidth/100)*20;
 
-var end=(window.innerWidth/100)*30;
-var jump=1;
-
-
+let end=(window.innerWidth/100)*30;
+let jump=1;
 
 
 
-var moveItem = function (start, end, jump, object) {
-    var clock;
 
-    var moveRight = function (object, jump) {
 
-            if(parseFloat(object.style.left)<end){
+const moveItem = function (start, end, jump, object) {
+    let clock;
 
-                object.style.left=parseFloat(object.style.left) + jump + "px";
+    const moveRight = function (object, jump) {
+
+            if( parseFloat( object.style.left ) < end ){
+
+                object.style.left = parseFloat( object.style.left ) + jump + "px";
 
 
 
             } else
             {
-                clearInterval(clock);
+                clearInterval( clock );
             }
     };
 
-    var moveLeft= function (object, jump) {
+    let moveLeft = function ( object, jump ) {
 
 
 
-        if(parseFloat(object.style.left)>end){
+        if( parseFloat( object.style.left ) > end ){
 
-            object.style.left=parseFloat(object.style.left) - jump + "px";
+            object.style.left = parseFloat( object.style.left ) - jump + "px";
 
 
 
         } else
         {
-            clearInterval(clock);
+            clearInterval( clock );
         }
     };
 
 
-        if(start<end){
-            clock= setInterval(function () {moveRight(object, jump)}, 100);
+        if( start < end ){
+            clock = setInterval( function () { moveRight( object, jump ) }, 100);
         } else{
-            clock= setInterval(function () {moveLeft(object, jump)}, 100);
+            clock = setInterval( function () { moveLeft( object, jump ) }, 100);
         }
 
 };
 
-var slideOne= function () {
-    var container=document.querySelector(".background");
+const slideOne= function () {
+    const container = document.querySelector(".background");
 
-    var bg=document.querySelector(".gta-bg");
-    var char=document.querySelector(".gta-char");
+    const bg = document.querySelector(".gta-bg");
+    const char=document.querySelector(".gta-char");
 
     bg.classList.add("remove");
     container.removeChild(bg);
@@ -71,23 +71,23 @@ var slideOne= function () {
     bg.classList.remove("remove");
     char.classList.remove("remove");
 
-    var divBg=document.createElement("div");
+    const divBg = document.createElement("div");
     divBg.classList.add("gta-bg");
-    divBg.style.display="block";
-    divBg.style.backgroundImage="url('images/gta4-background.jpg')";
+    divBg.style.display = "block";
+    divBg.style.backgroundImage = "url('images/gta4-background.jpg')";
 
-    var divChar=document.createElement("div");
+    const divChar = document.createElement("div");
 
 
     divChar.classList.add("gta-char");
-    divChar.style.display="block";
-    divChar.style.height="90%";
-    divChar.style.width="525px";
-    divChar.style.backgroundImage="url('images/Niko-Bellic-Full.png')";
-    var startOfMovement=parseInt((window.innerWidth/100)*20);
-    var endOfMovement=parseInt((window.innerWidth/100)*25);
+    divChar.style.display = "block";
+    divChar.style.height = "90%";
+    divChar.style.width = "525px";
+    divChar.style.backgroundImage = "url('images/Niko-Bellic-Full.png')";
+    const startOfMovement = parseInt((window.innerWidth/100)*20);
+    const endOfMovement = parseInt((window.innerWidth/100)*25);
 
-    divChar.style.left=startOfMovement+"px";
+    divChar.style.left = startOfMovement + "px";
 
     container.appendChild(divBg);
     container.appendChild(divChar);
@@ -97,11 +97,11 @@ var slideOne= function () {
 
 };
 
-var slideTwo= function () {
-    var container=document.querySelector(".background");
+const slideTwo = function () {
+    const container=document.querySelector(".background");
 
-    var bg=document.querySelector(".gta-bg");
-    var char=document.querySelector(".gta-char");
+    const bg=document.querySelector(".gta-bg");
+    const char=document.querySelector(".gta-char");
 
     bg.classList.add("remove");
     container.removeChild(bg);
@@ -115,21 +115,21 @@ var slideTwo= function () {
 
 
 
-    var divBg=document.createElement("div");
+    const divBg=document.createElement("div");
     divBg.classList.add("gta-bg");
-    divBg.style.display="block";
-    divBg.style.backgroundImage="url('images/gta5-background.jpg')";
+    divBg.style.display = "block";
+    divBg.style.backgroundImage = "url('images/gta5-background.jpg')";
 
-    var divChar=document.createElement("div");
+    const divChar = document.createElement("div");
     divChar.classList.add("gta-char");
     divChar.style.backgroundImage="url('images/gta-girl2.png')";
     divChar.style.display="block";
     divChar.style.height="80%";
     divChar.style.width="420px";
-    var startOfMovement=parseInt((window.innerWidth/100)*55);
-    var endOfMovement=parseInt((window.innerWidth/100)*45);
+    const startOfMovement = parseInt((window.innerWidth/100)*55);
+    const endOfMovement = parseInt((window.innerWidth/100)*45);
 
-    divChar.style.left=startOfMovement+"px";
+    divChar.style.left = startOfMovement+"px";
 
     container.appendChild(divBg);
     container.appendChild(divChar);
